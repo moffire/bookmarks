@@ -117,7 +117,12 @@ USE_TZ = True
 
 
 # Auth
-
+AUTHENTICATION_BACKENDS = [
+    # default authentication backend
+    'django.contrib.auth.backends.ModelBackend',
+    # custom authentication by email
+    'account.authentication.EmailAuthBackend',
+]
 LOGIN_REDIRECT_URL = 'dashboard'
 LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
