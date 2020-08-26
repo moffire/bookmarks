@@ -6,6 +6,7 @@ urlpatterns = [
     # path('login/', user_login, name='login'),
     path('login/', auth_views.LoginView.as_view(), name='login'),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
+
     # block below can be replaced with
     # path("", include("django.contrib.auth.urls"))
     path('password_change/', auth_views.PasswordChangeView.as_view(), name='password_change'),
@@ -16,5 +17,8 @@ urlpatterns = [
     path('reset/done/', auth_views.PasswordResetCompleteView.as_view(), name='password_reset_complete'),
     path('register/', register, name='register'),
     #
+    # edit user profile
+    path('edit/', edit, name='edit'),
+
     path('', dashboard, name='dashboard'),
 ]
